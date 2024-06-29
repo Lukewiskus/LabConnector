@@ -10,8 +10,9 @@ export default defineConfig({
     dialect: "postgresql", // "postgresql" | "mysql"
     schema: "./src/drizzle/schema.ts",
     dbCredentials: {
-       url: process.env.DATABASE_URL ?? "",
-       user: process.env.DB_USER ?? "",
-       password: process.env.DB_PASSWORD ?? "",
+        database: process.env.POSTGRES_DATABASE ?? "",
+        url: process.env.DATABASE_URL ?? "",
+        user: process.env.POSTGRES_USERNAME ?? "",
+        password: process.env.POSTGRES_PASSWORD ?? "",
     },
 })

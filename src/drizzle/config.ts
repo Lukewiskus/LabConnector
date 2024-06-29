@@ -5,6 +5,7 @@ import postgres from "postgres";
 import * as schema from "@/drizzle/schema";
 
 const connectionString = process.env.DATABASE_URL || "";
+console.log(connectionString)
 const client = postgres(connectionString);
 const db = drizzle(client, { schema });
 

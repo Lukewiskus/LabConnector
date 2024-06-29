@@ -16,10 +16,11 @@ const schema = z.object({
 const getNotes = async () => {
     try {
         const nts = await db.select().from(notes);
-
+      
         return nts;
-    } catch (error) {
-        throw new Error("Something went wrong when fetching notes!");
+    } catch (error : any) {
+      console.error('Error fetching notes:', error.message);
+      throw error;
     }
 };
 
